@@ -14,42 +14,18 @@ export default function Form() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                value={firstName}
-                onChange={e => setFirstName(e.target.value)}
-                placeholder="First name"
-                type="text"
-                name="firstName"
-                required />
-
-            <input
-                value={lastName}
-                onChange={e => setLastName(e.target.value)}
-                placeholder="Last name"
-                type="text"
-                name="lastName"
-                required />
-
-            <input
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder="Email address"
-                type="email"
-                name="email"
-                required />
-
-            <input
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder="Password"
-                type="password"
-                name="password"
-                required />
-
-            <button type="submit">Submit</button>
-            <br />
-            <span>{firstName}</span>
-        </form>
+        <div className="container-fluid">
+            <br/>
+            <div className="form-row">
+                <div className="col-12 col-md-2">
+                    <label>Nome</label>
+                    <input type="text" className="form-control"/>
+                </div>
+                <div className="col-12 col-md-4">
+                    <label>Nome do Pai</label>
+                    <input type="text" className="form-control"/>
+                </div>
+            </div>
+        </div>
     )
 }
