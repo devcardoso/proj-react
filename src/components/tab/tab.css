@@ -1,0 +1,15 @@
+.tab {
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .tab:hover {
+    background-color: #d8d8d8;
+  }
+  .tab.active:hover {
+    background-color: transparent;
+  }
+  .tab .svg-inline--fa {
+    margin-right: 8px;
+  }
+  
