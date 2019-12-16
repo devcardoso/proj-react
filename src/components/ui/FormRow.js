@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Row = (props) => {
+const FormRow = (props) => {
     return (
-        <div className="row">
+        <div className="form-row">
             {props.children}
         </div>
     );
 };
-export default Row;
+export default FormRow;

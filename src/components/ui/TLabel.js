@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Label = (props) => {
+const TLabel = (props) => {
     return (
-       <label className="label" {...props}>{props.text}</label>
+       <label className="t-label" {...props}>{props.text}</label>
     );
 };
 
-Label.propTypes = {
+TLabel.propTypes = {
     text: PropTypes.string
 }
 
-Label.defaultProps = {
+TLabel.defaultProps = {
     text:'texto-rótulo'
 }
-export default Label;
+export default TLabel;

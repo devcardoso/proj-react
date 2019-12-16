@@ -1,17 +1,19 @@
-import React from 'react';
-import styled from 'styled-components'
+import React,{useState} from 'react';
 
-const TextField = (props) => {
+const TEdit = (props) => {
+    const[model,setModel] = useState(props.model)
     
     return (
-        <input {...props} />
+        <input
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+            {...props} />
     );
 };
 
-TextField.defaultProps = {
-    className: 'form-control form-control-sm',
+TEdit.defaultProps = {
+    className: 'form-control t-edit',
     type: 'text'
 }
 
-
-export default TextField;
+export default TEdit;

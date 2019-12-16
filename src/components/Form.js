@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import FormRow from './ui/FormRow'
 
 export default function Form() {
 
@@ -16,8 +17,8 @@ export default function Form() {
     return (
         <div className="container-fluid">
             <br/>
-            <div className="form-row">
-                <div className="col-12 col-md-2">
+            <FormRow>
+                <div className="col-12 col-md-1">
                     <label>Nome</label>
                     <input type="text" className="form-control"/>
                 </div>
@@ -25,7 +26,7 @@ export default function Form() {
                     <label>Nome do Pai</label>
                     <input type="text" className="form-control"/>
                 </div>
-            </div>
+            </FormRow>
         </div>
     )
 }

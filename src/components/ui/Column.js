@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 const Column = (props) => {
-    let clazz = `col-${props.cols}`
+    let clazz = `col-md-${props.cols}`
     return (
         <div className={clazz}>
             {props.children}
