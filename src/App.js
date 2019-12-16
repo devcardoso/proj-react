@@ -8,12 +8,24 @@ import TEdit from './components/ui/TEdit'
 
 function App() {
   const[nome,setNome] = useState('')
+
+  const on = (e) => {
+    setNome(e.target.value)
+  }
   return (
     <div className="container-fluid">
       <Row>
         <Column cols={9}>
           <TLabel text={'Informe o nome'}/>
           <TEdit model={nome}/>
+        </Column>
+        <Column cols={3}>
+          <TLabel text={'Cpf'}/>
+          <input 
+                type="text" 
+                className="form-control"
+                value={nome}
+                onChange={on}/>
         </Column>
       </Row>
   <span>{nome}</span>

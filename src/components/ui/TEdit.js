@@ -3,10 +3,11 @@ import React,{useState} from 'react';
 const TEdit = (props) => {
     const[model,setModel] = useState(props.model)
     
+    const action = (e) => {
+
+    }
     return (
         <input
-            value={model}
-            onChange={(e) => setModel(e.target.value)}
             {...props} />
     );
 };
