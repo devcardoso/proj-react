@@ -30,6 +30,7 @@
 
 .form-control {
   font-size: 0.875rem;
+  font-weight: 400;
   display: block;
   width: 100%;
   line-height: 1.5;
@@ -92,7 +93,7 @@ body {
 }
 
 /*componentes*/
-.t-label {
+.label {
   margin-bottom: 0.1em;
   font-weight: bold;
   font-size: 0.9em;
@@ -101,7 +102,7 @@ body {
   color:var(--PRIMARY_DARK_COLOR);
 }
 
-.t-edit{
+.edit{
   background: #fff;
   height: calc(1.8rem + 2px);
 	color:var(--PRIMARY_DARK_COLOR);

@@ -1,11 +1,6 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 const TEdit = (props) => {
-    const[model,setModel] = useState(props.model)
-    
-    const action = (e) => {
-
-    }
     return (
         <input
             {...props} />
@@ -13,7 +8,7 @@ const TEdit = (props) => {
 };
 
 TEdit.defaultProps = {
-    className: 'form-control t-edit',
+    className: 'form-control edit',
     type: 'text'
 }
 

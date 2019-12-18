@@ -5,30 +5,21 @@ import FormRow from './components/ui/FormRow'
 import Column from './components/ui/Column'
 import Row from './components/ui/Row'
 import TEdit from './components/ui/TEdit'
+import {useInput} from './hooks/useInputHook'
 
 function App() {
-  const[nome,setNome] = useState('')
 
-  const on = (e) => {
-    setNome(e.target.value)
-  }
+  const nome = useInput({upperCase:true})
   return (
     <div className="container-fluid">
       <Row>
-        <Column cols={9}>
+        <Column cols={5}>
           <TLabel text={'Informe o nome'}/>
-          <TEdit model={nome}/>
-        </Column>
-        <Column cols={3}>
-          <TLabel text={'Cpf'}/>
-          <input 
-                type="text" 
-                className="form-control"
-                value={nome}
-                onChange={on}/>
+          <TEdit 
+                type="text" {...nome}/>
         </Column>
       </Row>
-  <span>{nome}</span>
+  <span>{nome.value}</span>
     </div>
   );
 }
