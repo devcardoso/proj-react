@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 
 const useInput = ({defValue = '',upperCase = false}) => {
     
@@ -11,7 +11,7 @@ const useInput = ({defValue = '',upperCase = false}) => {
             setValue(event.target.value)
     }
 
-    return {value,onChange}
+    return [{value,onChange},setValue]
 }
 
 export {useInput}
