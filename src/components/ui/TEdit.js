@@ -1,11 +1,6 @@
 import React from 'react';
 
-const TEdit = (props) => {
-    return (
-        <input
-            {...props} />
-    );
-};
+const TEdit = React.forwardRef((props,ref) => (<input ref={props._ref} {...props} />));
 
 TEdit.defaultProps = {
     className: 'form-control edit',

@@ -117,7 +117,7 @@ body {
 	padding:0.370rem 0.75rem;
   -webkit-appearance: none;
   -moz-appearance: none;
-	appearance: none;
+  appearance: none;
 	cursor:pointer;
 	padding-right: 50px;
 	background-image:url('../images/arrowDown.svg');
