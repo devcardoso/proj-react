@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const TLabel = (props) => {
     return (
-       <label className="label" {...props}>{props.text}</label>
+       <label className="s-tlabel" {...props}>{props.text}</label>
     );
 };
 
