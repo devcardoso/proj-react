@@ -13,7 +13,7 @@ const TComboBox = React.forwardRef((props,ref) =>(
     ));
 
 TComboBox.defaultProps = {
-    className: 'form-control select',
+    className: 'form-control s-tcombobox',
 }
 
 export default TComboBox;

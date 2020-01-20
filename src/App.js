@@ -8,11 +8,13 @@ import TComboBox from './components/ui/TComboBox'
 import {useInput} from './hooks/useInputHook'
 import {usePfj} from './hooks/usePfjHook'
 import TGrid from './components/ui/TGrid'
+import TMemo from './components/ui/TMemo'
 function App() {
 
   const [{...nome},setNome] = useInput({upperCase:true})
   const [{...cpf},setCpf] = usePfj()
   const [{...sexo},setSexo] = useInput({})
+  const [{...obs},setObs] = useInput({upperCase:true})
   //const [disabled,setDisabled] = useState(false)
   const el = useRef(null)
   const divStyle = {
@@ -29,11 +31,14 @@ function App() {
     const model = {
       nome:nome.value,
       cpf:cpf.value,
-      sexo:sexo.value
+      sexo:sexo.value,
+      obs:obs.value
     }
-    console.log(JSON.stringify(model))
+    alert(JSON.stringify(model))
+    //console.log()
   }
   const ufs = [
+    {sexo:''},
     {sexo:'MASCULINO'},
     {sexo:'FEMININO'}
   ]
@@ -70,10 +75,17 @@ function App() {
         </Column>
 
       </FormRow>
+      <FormRow>
+        <Column cols={6}>
+        <TLabel text={'Observação'}/>
+          <TMemo {...obs} cols="5"/>
+        </Column>
+      </FormRow>
       </div>
       <button type="button" onClick={onClick}>Click</button>
       <br/>
       <TGrid dataSet={dados} headers={headers}/>
+      <br/>
     </div>
   );
 }
