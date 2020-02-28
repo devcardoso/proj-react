@@ -92,7 +92,7 @@ body {
 }
 
 /*componentes*/
-.s-tlabel {
+.tlabel {
   margin-bottom: 0.1em;
   font-weight: bold;
   font-size: 0.9em;
@@ -101,7 +101,7 @@ body {
   color:var(--PRIMARY_DARK_COLOR);
 }
 
-.s-tedit{
+.tedit{
   height: calc(1.7rem + 2px);
   background: #fff;
 	color:var(--PRIMARY_DARK_COLOR);
@@ -110,7 +110,7 @@ body {
 	box-sizing: border-box;
 }
 
-.s-tcombobox{
+.tcombobox{
   height: calc(1.7rem + 2px);
 	background:#FFF;
 	color: --var(PRIMARY_DARK_COLOR);
@@ -130,11 +130,16 @@ body {
   box-sizing: border-box;
 }
 
-.s-tmemo{
+.tmemo{
   font-family:inherit;
 	background: #fff;
 	color: --var(PRIMARY_DARK_COLOR);
 	border:1px solid --var(SECONDARY_COLOR);
 	padding: 0.375rem 0.75rem;
 	box-sizing: border-box;
+}
+
+.tlabel.custom-chk-label {
+  float: left;
+  margin-top: -1px;
 }
