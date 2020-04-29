@@ -12,6 +12,11 @@
   --DANGER_COLOR: #d42d0a;
   --DANGER_LIGHT_COLOR: #ff2c00;
   --DANGER_DARK_COLOR: #821d08;
+  --text-color: #0e5487;
+  --bg-color:#fff;
+  --gborder:1px solid #d6d6d6;
+  --gpadding:0.87rem 0.40rem;
+  --cgpadding:0.315rem 0.40rem;
 }
 
 .form-row {
@@ -52,7 +57,7 @@
 
 .form-control:focus {
   color: #495057;
-  background-color: #fff;
+  background-color:var(--bg-color);
   border-color: #80bdff;
   outline: none;
 }
@@ -83,7 +88,7 @@
 }
 
 .form-control:disabled, .form-control[readonly] {
-  background-color: #e9ecef;
+  background-color:var(--input-border-color);
   opacity: 1;
 }
 
@@ -92,49 +97,240 @@ body {
 }
 
 /*componentes*/
+
 .s-tlabel {
   margin-bottom: 0.1em;
+  margin-top: 0.12em;
   font-weight: bold;
   font-size: 0.9em;
   width: 100%;
   display: block;
-  color:var(--PRIMARY_DARK_COLOR);
+  color: var(--text-color);
 }
 
-.s-tedit{
+.s-tedit {
   height: calc(1.7rem + 2px);
-  background: #fff;
-	color:var(--PRIMARY_DARK_COLOR);
-	border:1px solid var(--SECONDARY_COLOR);
-  padding: 0.375rem 0.75rem;
-	box-sizing: border-box;
+  background: var(--bg-color);
+  color: var(--PRIMARY_DARK_COLOR);
+  border: var(--gborder);
+  padding: var(--gpadding);
+  box-sizing: border-box;
 }
 
-.s-tcombobox{
+.s-tcombobox {
   height: calc(1.7rem + 2px);
-	background:#FFF;
-	color: --var(PRIMARY_DARK_COLOR);
-	border:1px solid --var(SECONDARY_COLOR);
-	padding:0.370rem 0.75rem;
-  -webkit-appearance: none;
+  background:var(--bg-color);
+  color: --var(PRIMARY_DARK_COLOR);
+  border: var(--gborder);
+  padding: var(--cgpadding);
+  -webkit-appearance: none; 
   -moz-appearance: none;
   appearance: none;
-	cursor:pointer;
-	padding-right: 50px;
-	background-image:url('../images/arrowDown.svg');
-	background-repeat:no-repeat;
-	background-size: 20px 17px; 
+  cursor: pointer;
+  padding-right: 50px;
+  background-image: url('../images/arrowDown.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 17px;
   background-position: right 14px center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.s-tmemo{
-  font-family:inherit;
-	background: #fff;
-	color: --var(PRIMARY_DARK_COLOR);
-	border:1px solid --var(SECONDARY_COLOR);
-	padding: 0.375rem 0.75rem;
-	box-sizing: border-box;
+.s-tmemo {
+  font-family: inherit;
+  background:var(--bg-color);
+  color: --var(PRIMARY_DARK_COLOR);
+  border: var(--gborder);
+  padding-left: 0.320rem;
+  padding-top: 0.320rem;
+  box-sizing: border-box;
 }
+
+@keyframes hover-color {
+  from {
+    border-color:var(--input-border-color)/* #c0c0c0;*/
+  }
+  to {
+    border-color: #3e97eb;
+  }
+}
+
+.magic-radio, .magic-checkbox {
+  position: absolute;
+  display: none;
+}
+
+.magic-radio[disabled], .magic-checkbox[disabled] {
+  cursor: not-allowed;
+}
+
+.magic-radio+label, .magic-checkbox+label {
+  position: relative;
+  display: inline-block;
+  padding-left: 22px;
+  cursor: pointer;
+}
+
+.magic-radio+label:hover:before, 
+.magic-checkbox+label:hover:before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color;
+}
+
+.magic-radio+label:before, 
+.magic-checkbox+label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: var(--gborder);
+  background: var(--bg-color);
+}
+
+.magic-radio+label:after, 
+.magic-checkbox+label:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+.magic-radio[disabled]+label, 
+.magic-checkbox[disabled]+label {
+  cursor: not-allowed;
+  color: #e4e4e4;
+}
+
+.magic-radio[disabled]+label:hover, 
+.magic-radio[disabled]+label:before, 
+.magic-radio[disabled]+label:after, 
+.magic-checkbox[disabled]+label:hover, 
+.magic-checkbox[disabled]+label:before, 
+.magic-checkbox[disabled]+label:after {
+  cursor: not-allowed;
+}
+
+.magic-radio[disabled]+label:hover:before, 
+.magic-checkbox[disabled]+label:hover:before {
+  border: 1px solid #e4e4e4;
+  animation-name: none;
+}
+
+.magic-radio[disabled]+label:before, 
+.magic-checkbox[disabled]+label:before {
+  border-color: #e4e4e4;
+}
+
+.magic-radio:checked+label:before, 
+.magic-checkbox:checked+label:before {
+  animation-name: none;
+}
+
+.magic-radio:checked+label:after, 
+.magic-checkbox:checked+label:after {
+  display: block;
+}
+
+.magic-radio+label:before {
+  border-radius: 50%;
+}
+
+.magic-radio+label:after {
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3e97eb;
+}
+
+.magic-radio:checked+label:before {
+  border: 1px solid #3e97eb;
+}
+
+.magic-radio:checked[disabled]+label:before {
+  border: 1px solid #c9e2f9;
+}
+
+.magic-radio:checked[disabled]+label:after {
+  background: #c9e2f9;
+}
+
+.magic-checkbox+label:before {
+  border-radius: 0;
+}
+
+.magic-checkbox+label:after {
+  top: 2px;
+  left: 7px;
+  box-sizing: border-box;
+  width: 6px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff;
+  border-top: 0;
+  border-left: 0;
+}
+
+.magic-checkbox:checked+label:before {
+  border: var(--gborder);
+  background: #3e97eb;
+}
+
+.magic-checkbox:checked[disabled]+label:before {
+  border: #c9e2f9;
+  background: #c9e2f9;
+}
+
+.text-checkmark{
+  color: var(--text-color);
+}
+
+.container-checkbox{
+  padding-top: 10px;
+}
+
+.container-checkbox{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.loading{
+  width: 6em;
+  height: 6em;
+  top:30%;
+  left: 46%;
+  position: absolute;
+  margin:0;
+  vertical-align: middle;
+  display: inline-block;
+  text-indent:-99em;
+  overflow:hidden;
+  animation:rotation .6s infinite linear;
+  border-left: 3px solid #08bd75;
+  border-right: 3px solid rgba(8, 189, 117, 0.36);
+  border-bottom: 3px solid rgba(8, 189, 117, 0.73);
+  border-top: 3px solid #08bd75;
+  border-radius: 100%;
+  z-index:1000;
+}
+
+@keyframes rotation {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(359deg);}
+}
+
+.loading-c{
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(225,255,255, .8);
+}
+/*#337fbd cor azul*/

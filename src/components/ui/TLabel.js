@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TLabel = (props) => {
-    return (
-       <label className="s-tlabel" {...props}>{props.text}</label>
-    );
+    return (<label className="s-tlabel" {...props}>{props.text}</label>);
 };
 
 TLabel.propTypes = {
-    text: PropTypes.string
+    label: PropTypes.string
 }
 
 TLabel.defaultProps = {
