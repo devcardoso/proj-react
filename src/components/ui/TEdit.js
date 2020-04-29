@@ -3,7 +3,7 @@ import React from 'react';
 const TEdit = React.forwardRef((props,ref) => (<input ref={ref} {...props} />));
 
 TEdit.defaultProps = {
-    className: 'form-control s-tedit',
+    className: 'form-control tedit',
     type: 'text'
 }
 
